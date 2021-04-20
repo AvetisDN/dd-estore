@@ -6,6 +6,12 @@
     const toggleShowDetails = () => {
         showDetails = !showDetails
     }
+
+    /*
+    '/' ================> ProductGrid
+    '/order' ===========> Order
+    '/product/:id' =====> ProductSingle
+     */
 </script>
 
 <div class="cart-informer">
