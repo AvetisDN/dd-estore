@@ -99,7 +99,7 @@
       //display: none;
       position: absolute;
       z-index: 999;
-      background: $secondary;
+      background-color: rgba($secondary,.9);
       padding: 1rem;
       border-radius: .25rem;
       right: 0;
