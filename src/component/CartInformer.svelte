@@ -1,17 +1,19 @@
 <script>
     import cart from "../store/cart";
 
+    export let toggleOrder
+
     let showDetails = false
 
     const toggleShowDetails = () => {
         showDetails = !showDetails
     }
 
-    /*
-    '/' ================> ProductGrid
-    '/order' ===========> Order
-    '/product/:id' =====> ProductSingle
-     */
+    const handleToggleOrder = (e) => {
+        e.preventDefault()
+        toggleShowDetails()
+        toggleOrder()
+    }
 </script>
 
 <div class="cart-informer">
@@ -42,7 +44,7 @@
         <div>
             <h3>Summ: ${cart.totalSumm($cart)}</h3>
         </div>
-        <a href="/">Go To Cart</a>
+        <a href="/" on:click={handleToggleOrder}>Go To Cart</a>
     </div>
 </div>
 

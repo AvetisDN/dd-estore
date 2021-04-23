@@ -1,5 +1,7 @@
 <script>
     import CartInformer from "./component/CartInformer.svelte";
+
+    export let toggleOrder
 </script>
 
 <header>
@@ -10,7 +12,7 @@
                 eStore
             </a>
         </div>
-        <CartInformer/>
+        <CartInformer toggleOrder={toggleOrder}/>
     </div>
 </header>
 

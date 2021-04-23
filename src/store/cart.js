@@ -23,13 +23,26 @@ const addToCart = (product) => update((cart) => {
 })
 
 const deleteFromCart = (id) => update((cart) => {
-
+    let index = cart.findIndex((cartItem) => cartItem.id === id)
+    let tmp = cart
+    tmp.splice(index, 1)
+    cart = tmp
+    localStorage.setItem('estore-cart', JSON.stringify(cart))
+    return cart
 })
 const increaseQuantity = (id) => update((cart) => {
-
+    let index = cart.findIndex((cartItem) => cartItem.id === id)
+    cart[index].quantity++
+    localStorage.setItem('estore-cart', JSON.stringify(cart))
+    return cart
 })
 const decreaseQuantity = (id) => update((cart) => {
-
+    let index = cart.findIndex((cartItem) => cartItem.id === id)
+    if(cart[index].quantity > 1) {
+        cart[index].quantity--
+        localStorage.setItem('estore-cart', JSON.stringify(cart))
+    }
+    return cart
 })
 const isInCart = (id, cart) => {
     let index = cart.findIndex((cartItem) => cartItem.id === id)
